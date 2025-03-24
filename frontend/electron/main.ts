@@ -1,21 +1,17 @@
-import { app, BrowserWindow } from 'electron'; // 引入 Electron API
+import { app, BrowserWindow } from 'electron';
 
 let mainWindow: BrowserWindow | null = null; // 主窗口变量
 
-// 创建窗口的函数
-const createWindow = (() => {
+app.whenReady().then(() => {
   mainWindow = new BrowserWindow({
-    width: 1200, // 设置窗口宽度
-    height: 800, // 设置窗口高度
+    width: 800,
+    height: 600,
     webPreferences: {
-      nodeIntegration: true, // 允许 Node.js 代码
+      nodeIntegration: true,
     },
   });
 
-  app.whenReady().then(createWindow);
-
-  // 加载 Vite 开发服务器地址
-  mainWindow.loadURL('http://localhost:5173'); // 默认网址，删去也可正常运行
+  mainWindow.loadURL('http://localhost:5173');
 
   mainWindow.on('closed', () => {
     mainWindow = null;
