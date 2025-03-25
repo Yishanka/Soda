@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0" version="26.1.1">
   <diagram name="第 1 页" id="dIg31AuSRGhhQoN508RZ">
-    <mxGraphModel dx="1213" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1516" dy="960" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -22,7 +22,7 @@
         <mxCell id="SAo0T7gmhGIYfKUNf4ec-9" value="评估信用等级" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="680" y="400" width="140" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="6mHeDIkiS--_ZNNADFWJ-5" value="聊天室" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="6mHeDIkiS--_ZNNADFWJ-5" value="用户间交流" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="190" y="420" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="6mHeDIkiS--_ZNNADFWJ-6" value="根据用户匹配度" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -38,7 +38,7 @@
           <mxGeometry x="640" y="490" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="6mHeDIkiS--_ZNNADFWJ-17" value="用户类型搜索" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="370" y="420" width="140" height="70" as="geometry" />
+          <mxGeometry x="385" y="420" width="140" height="70" as="geometry" />
         </mxCell>
         <mxCell id="6mHeDIkiS--_ZNNADFWJ-18" value="注册" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="580" y="220" width="140" height="70" as="geometry" />
