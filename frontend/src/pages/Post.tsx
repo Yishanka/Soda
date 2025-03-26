@@ -1,5 +1,4 @@
 import { useState } from "react";
-import NavBar from "../components/NavBar.js"; // 引入导航栏组件
 
 const Post = () => {
   const [name, setName] = useState("");
