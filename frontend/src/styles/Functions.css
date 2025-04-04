@@ -1,0 +1,53 @@
+  /* 提交按钮 */
+  .refresh-button {
+    background-color: white;
+    border: none;
+    height: 23px;
+    width: 23px;
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.refresh-button:hover {
+  transform: scale(1.1);
+}
+
+  .button {
+    padding: 12px 20px;  
+    background-color: #F9D9DC;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .button:hover {
+    background-color: #D75670;
+    transform: scale(1.015);
+  }
+
+  /* Webkit（Chrome, Edge, Safari） */
+.match-list::-webkit-scrollbar {
+    width: 6px; /* 细一点 */
+}
+
+.match-list::-webkit-scrollbar-thumb {
+    background: #f1f1f1; /* 滑块颜色 */
+    border-radius: 10px; /* 让滚动条更圆滑 */
+    transition: background-color 0.3s
+}
+
+.match-list::-webkit-scrollbar-thumb:hover {
+    background: #999; /* 鼠标悬停时稍微变暗 */
+}
+
+.loading{
+  color: #2E3025;
+}

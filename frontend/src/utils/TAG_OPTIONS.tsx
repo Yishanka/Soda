@@ -1,4 +1,4 @@
-const TagOptions = [
+const TAG_OPTIONS = [
   { value: '运动', label: '🏃 运动' },
   { value: '美食', label: '🍔 美食' },
   { value: '学习', label: '📚 学习' },
@@ -49,4 +49,4 @@ const TagOptions = [
   { value: '公益', label: '🤝 公益' },
 ];
 
-export default TagOptions;
+export default TAG_OPTIONS;

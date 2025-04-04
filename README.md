@@ -16,9 +16,12 @@ Soda-速搭是一个跨平台的搭子匹配应用，支持 **Windows / macOS / 
 
 ## 如何运行
 1. 克隆仓库
-2. 安装依赖
+2. 执行以下脚本
    ```bash
    cd backend
    pip install -r requirements.txt
    cd ../frontend
    npm install
+   tsc
+   cd..
+   npm run dev

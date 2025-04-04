@@ -1,0 +1,79 @@
+/* 顶部栏 */
+.top-bar {
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    background: #ffffff;
+    padding: 10px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+  
+.top-bar-content {
+    width: 70%;
+    display: flex;
+}
+
+/* 左侧 Logo 和 文字 */
+.logo-container {
+    display: flex;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+}
+
+.top-bar-title{
+    font-weight: bold;
+    font-size: 32px;
+    margin-top: 45px;
+}
+
+  /* 搜索框 */
+.search-container {
+    display: flex;
+    flex:1;
+    margin: 50px 0px 10px 5%;
+    background-color: #f1f1f1;
+    padding: 5px 12px;
+    border: #F9F9F9;
+    border-radius: 20px;
+    font-size: 14px;
+}
+.search-bar {
+    padding: 5px;
+    background-color: #f1f1f1;
+    width: 100%;
+    border: #F9F9F9;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+}
+.search-icon{
+    width: 20px;
+    height: 20px;
+    margin: 4px 2px 0px 1px;
+}
+
+/* 右侧头像 */
+.avatar {
+    margin: 35px 0px 0px 5%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.avatar:hover {
+    transform: scale(1.1);
+}
+.profile-link{
+    margin: 60px 25px 0 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    color: #2E3025;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}

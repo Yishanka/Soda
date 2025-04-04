@@ -1,0 +1,98 @@
+/* 提交表单布局 */
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    gap: 25px;
+    background: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 4%;
+    padding-right: 4%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+
+  /* 标签样式 */
+  .label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2E3025;
+  }
+  
+  /* 输入框通用样式 */
+  .input, .textarea,.time-select {
+    margin: 3px 0;
+    padding: 10px;
+    border: none;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: #F9F9F9;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 98%;
+  }
+  
+  .input:focus, .textarea:focus {
+    border: 1px solid #F9D9DC;
+    box-shadow: 0 0 6px #F9D9DC;
+    outline: none;
+  }
+
+  .time-select{
+    cursor: pointer;
+  }
+  /* 文本域自适应高度 */
+  .textarea {
+    min-height: 60px;
+    resize: vertical;
+  }
+  
+  /* 错误提示 */
+  .error {
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* react-select 选择样式覆盖 */
+  .react-select__control {
+    margin: 3px 0 !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1)!important;
+    background-color: #F9F9F9!important;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    transition: border-color 0.3s, box-shadow 0.3s !important;
+    width: 100% !important;
+    border: none !important;
+    cursor: pointer !important;
+  }
+  
+  .react-select__control--is-focused {
+    border: 1px solid #F9D9DC !important;
+    box-shadow: 0 0 6px #F9D9DC !important;
+    outline: none !important;
+  }
+  
+  .react-select__multi-value {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)!important;
+    background-color: #F9D9DC !important;
+    color: #D75670 !important;
+    border-radius: 6px !important;
+  }
+  
+  .react-select__multi-value__label {
+    color: #2E3025 !important;
+    font-weight: 550;
+  }
+  
+  .react-select__menu {
+    border-radius: 8px !important;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .react-select__control--menu-is-open {
+    border-color: #F9D9DC !important;
+    box-shadow: 0 0 6px #F9D9DC !important;
+  }
+  

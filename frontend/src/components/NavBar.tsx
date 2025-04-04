@@ -1,15 +1,37 @@
-import { Link } from 'react-router-dom'; // 引入 Link 组件，用于路由跳转
+import { Link, useLocation } from "react-router-dom";
 
-// 定义导航栏组件
 const NavBar = () => {
+  const location = useLocation();
+  const isAuthPage = location.pathname === "/login-page" || location.pathname === "/register-page";
+  const isLoggedIn = localStorage.getItem("token") !== null; // 判断是否登录
+
   return (
     <nav className="navbar">
-      {/* 导航链接 */}
-        <div className="nav-links">
-          <Link to="/" className="nav-link">主页</Link> {/* 跳转到主页 */}
-          <Link to="/post" className="nav-link">发布需求</Link> {/* 跳转到发布需求页面 */}
-          <Link to="/my-activity" className="nav-link">我的活动</Link> {/* 跳转到我的活动页面 */}
-        </div>
+      <div className="nav-links">
+        <Link
+          to="/find-page"
+          className="nav-link"
+          onClick={(e) => !isLoggedIn && isAuthPage && e.preventDefault()} // 未登录时拦截
+        >
+          发现
+        </Link>
+
+        <Link
+          to="/post-activity-page"
+          className="nav-link"
+          onClick={(e) => !isLoggedIn && isAuthPage && e.preventDefault()}
+        >
+          创建活动
+        </Link>
+
+        <Link
+          to="/my-activities-page"
+          className="nav-link"
+          onClick={(e) => !isLoggedIn && isAuthPage && e.preventDefault()}
+        >
+          我的
+        </Link>
+      </div>
     </nav>
   );
 };
