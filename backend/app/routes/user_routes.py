@@ -22,7 +22,7 @@ class UserController:
         token = jwt.encode(
             {
                 'user_id': id,
-                'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=24) # 过期时间
+                'exp': datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(seconds=12) # 过期时间
             },
             SECRET_KEY,
             algorithm='HS256'

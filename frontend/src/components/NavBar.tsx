@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 const NavBar = () => {
   const location = useLocation();
   const isAuthPage = location.pathname === "/login-page" || location.pathname === "/register-page";
-  const isLoggedIn = localStorage.getItem("token") !== null; // 判断是否登录
+  const isLoggedIn = !(localStorage.getItem("token") === null);
 
   return (
     <nav className="navbar">

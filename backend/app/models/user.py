@@ -29,16 +29,10 @@ class User(db.Model):
 
     # 设置密码
     def set_password(self, password):
-        '''
-        将密码转换为哈希值并存储。
-        '''
         self.password_hash = generate_password_hash(password)
 
     # 验证密码
     def check_password(self, password):
-        '''
-        验证用户输入的密码是否正确。
-        '''
         return check_password_hash(self.password_hash, password)
 
     # 返回用户的字符串表示

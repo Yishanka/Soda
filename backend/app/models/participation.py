@@ -1,6 +1,4 @@
 from app import db
-from .user import User
-from .activity import Activity
 
 class Participation(db.Model):
     __tablename__ = 'participation'

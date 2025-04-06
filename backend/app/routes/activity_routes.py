@@ -19,9 +19,12 @@ class ActivityController:
         if valid_result.get('is_valid') == False:
             return jsonify({'error': '请求错误'}), 401
         else: 
-            decoded_token = validation.decode_token(valid_result.get('token'))
-            creator_id = decoded_token.get('user_id')
-            data = request.get_json()
+            try:
+                decoded_token = validation.decode_token(valid_result.get('token'))
+                creator_id = decoded_token.get('user_id')
+                data = request.get_json()
+            except:
+                return jsonify({'error': '登录已过期或登录无效'}), 500
             try:
                 # 添加活动到 Activity
                 activity_time = datetime.datetime.fromisoformat(data['time'])
