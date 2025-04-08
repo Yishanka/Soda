@@ -165,22 +165,19 @@
           <mxGeometry y="86" width="200" height="26" as="geometry" />
         </mxCell>
         <mxCell id="sbAIaC_IB9AqrY3rTaV1-25" value="Users" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
-          <mxGeometry x="440" y="92" width="200" height="138" as="geometry" />
+          <mxGeometry x="440" y="92" width="200" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="sbAIaC_IB9AqrY3rTaV1-26" value="data: Model[ ]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="sbAIaC_IB9AqrY3rTaV1-25" vertex="1">
+        <mxCell id="sbAIaC_IB9AqrY3rTaV1-27" value="users: User[ ]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="sbAIaC_IB9AqrY3rTaV1-25" vertex="1">
           <mxGeometry y="26" width="200" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="sbAIaC_IB9AqrY3rTaV1-27" value="activities: Activity[ ]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="sbAIaC_IB9AqrY3rTaV1-25" vertex="1">
-          <mxGeometry y="52" width="200" height="26" as="geometry" />
-        </mxCell>
         <mxCell id="sbAIaC_IB9AqrY3rTaV1-28" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="sbAIaC_IB9AqrY3rTaV1-25" vertex="1">
-          <mxGeometry y="78" width="200" height="8" as="geometry" />
+          <mxGeometry y="52" width="200" height="8" as="geometry" />
         </mxCell>
         <mxCell id="sbAIaC_IB9AqrY3rTaV1-29" value="add(model:Model): Message" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="sbAIaC_IB9AqrY3rTaV1-25" vertex="1">
-          <mxGeometry y="86" width="200" height="26" as="geometry" />
+          <mxGeometry y="60" width="200" height="26" as="geometry" />
         </mxCell>
         <mxCell id="TuKI9G6kPxIfp8sa9-yE-22" value="get(key: string, value): Activity[ ]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="sbAIaC_IB9AqrY3rTaV1-25" vertex="1">
-          <mxGeometry y="112" width="200" height="26" as="geometry" />
+          <mxGeometry y="86" width="200" height="26" as="geometry" />
         </mxCell>
         <mxCell id="sbAIaC_IB9AqrY3rTaV1-30" value="DataModel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="200" y="-84" width="200" height="112" as="geometry" />
