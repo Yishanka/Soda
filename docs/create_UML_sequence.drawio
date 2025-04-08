@@ -55,7 +55,7 @@
           <mxGeometry x="55" y="320" width="10" height="160" as="geometry" />
         </mxCell>
         <mxCell id="CESZngJtCbdqiEpLdhRZ-29" value="Activities" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
-          <mxGeometry x="840" y="40" width="120" height="760" as="geometry" />
+          <mxGeometry x="840" y="40" width="120" height="1080" as="geometry" />
         </mxCell>
         <mxCell id="CESZngJtCbdqiEpLdhRZ-66" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="CESZngJtCbdqiEpLdhRZ-29" vertex="1">
           <mxGeometry x="55" y="560" width="10" height="80" as="geometry" />
