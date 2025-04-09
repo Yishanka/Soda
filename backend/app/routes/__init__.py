@@ -1,7 +1,8 @@
-from flask import Blueprint
-from app.routes.activity_routes import activity_bp
-from app.routes.user_routes import user_bp
+from flask import Flask
+from app.routes import activity_routes
+from app.routes import auth_routes
 
-def register_routes(app):
-    app.register_blueprint(activity_bp, url_prefix='/api')
-    app.register_blueprint(user_bp, url_prefix='/api')
+# 在 app 中加载蓝图
+def register_routes(app: Flask):
+    app.register_blueprint(activity_routes.activity_bp, url_prefix='/api/activity')
+    app.register_blueprint(auth_routes.auth_bp, url_prefix='/api/auth')

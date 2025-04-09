@@ -1,4 +1,3 @@
-// 定义发布活动界面
 const Participate = () => {
 
   return (

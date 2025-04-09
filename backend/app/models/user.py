@@ -1,40 +1,33 @@
 from datetime import datetime
 from app import db
-from werkzeug.security import generate_password_hash, check_password_hash
 
 class User(db.Model):
-    '''
-    用户模型类，表示系统中的用户。
-    '''
-    __tablename__ = 'users'  # 数据库表名
+    __tablename__ = 'users'  # 指定在数据库中的表名为 'users'
 
-    # 用户基本信息
-    id = db.Column(db.Integer, primary_key=True)  # 主键
-    username = db.Column(db.String(50), unique=True, nullable=False)  # 用户名
-    email = db.Column(db.String(100), unique=True, nullable=False)  # 邮箱
-    password_hash = db.Column(db.String(256), nullable=False)  # 密码哈希值
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)  # 用户注册时间
-    
+    id = db.Column(db.Integer, primary_key=True)  # 主键，用户唯一标识
+    username = db.Column(db.String(50), unique=True, nullable=False)
+    email = db.Column(db.String(100), unique=True, nullable=False) 
+    password_hash = db.Column(db.String(256), nullable=False)  # 存储加密后的密码
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    # 与活动的多对多关系：用户可以参加多个活动，一个活动也可以有多个参与者
+    # 通过第三张关联表 participations 来实现
     participated_activities = db.relationship(
-        'Activity', 
-        secondary='participation',  # 关联 participation 表
-        back_populates='participants'
+        'Activity',                         # 目标模型为 Activity
+        secondary='participations',         # 使用中间表 participations 建立多对多关系
+        back_populates='participants'       # 对应 Activity 模型中的 participants 字段，实现双向绑定
     )
+
+    # 与活动的一对多关系：一个用户可以创建多个活动
     created_activities = db.relationship(
-        'Activity', 
-        backref='creator',
-        lazy=True,
-        cascade='all, delete-orphan'
+        'Activity',                         # 目标模型为 Activity
+        back_populates='creator'            # 对应 Activity 模型中的 creator 字段，实现双向绑定
     )
 
-    # 设置密码
-    def set_password(self, password):
-        self.password_hash = generate_password_hash(password)
-
-    # 验证密码
-    def check_password(self, password):
-        return check_password_hash(self.password_hash, password)
-
-    # 返回用户的字符串表示
-    def __repr__(self):
-        return f'<User {self.username}>'
+    def get_user_info(self):
+        return {
+            'id':self.id,
+            'username':self.username,
+            'email':self.email,
+            'password_hasj':self.password_hash
+        }

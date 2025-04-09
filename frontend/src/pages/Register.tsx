@@ -1,28 +1,26 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom'; // 引入 Link 组件，用于路由跳转
+import { Link } from 'react-router-dom';
+import apiRequest from "../utils/apiRequest.js";
 import PageTitle from "../components/PageTitle.js";
-import ApiRequest from "../utils/ApiRequest.js";
-import Auth from "../models/Auth.js";
 
 const Register = () => {
     const navigate = useNavigate();
+    const { post } = apiRequest();
     const [error, setError] = useState("");
-    const { Post } = ApiRequest();
     const [isLoading, setIsLoading] = useState(false);
-
-    const [formData, setFormData] = useState<Auth>({
+    const [formData, setFormData] = useState({
         email: "",
         username: "",
         password: "",
     });
 
-    const submitRegister = async (e: any) => {
+    const submitRegister = async (e: React.FormEvent) => {
         setIsLoading(true)
         e.preventDefault(); 
         setError("");
         try {
-            const data = await Post("register", formData, false, e);
+            const data = await post("auth", "register", formData, e);
             localStorage.setItem("token", data.token);
             navigate("/find-page");
         } catch (err: any) {

@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// 定义主页
 const Home = () => {
-  const [isFinished, setIsFinished] = useState(false);
   const navigate = useNavigate();
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {

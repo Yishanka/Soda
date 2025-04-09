@@ -1,19 +1,19 @@
+import { useEffect, useState } from "react";
+import apiRequest from "../utils/apiRequest.js";
 import MatchCard from "../components/MatchCard.js";
 import PageTitle from "../components/PageTitle.js";
-import { useEffect, useState } from "react";
-import Activity from "../models/Activity.js";
-import ApiRequest from "../utils/ApiRequest.js";
+import ActivityInfo from "../interface/ActivityInfo.js";
 
 const Find = () => {
-  const [activities, setActivities] = useState<Activity[]>([]);
-  const [error, setError] = useState("");
+  const { get } = apiRequest();
+  const [activities, setActivities] = useState<ActivityInfo[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { Get } = ApiRequest();
+  const [error, setError] = useState("");
 
-  const fetchActivities = async () => {
+  const getActivities = async () => {
     setIsLoading(true);
     try {
-      const data: Activity[] = await Get("activities");
+      const data: [] = await get("activity", "get_all_activities");
       setActivities(data);
     } catch (err: any) {
       setError(err.message);
@@ -23,7 +23,7 @@ const Find = () => {
   };
 
   useEffect(() => {
-    fetchActivities();
+    getActivities();
   }, []);
 
   return (
@@ -37,7 +37,7 @@ const Find = () => {
         {/* 刷新按钮 */}
         <img
           src="/icons/refresh.png"
-          onClick={fetchActivities}
+          onClick={getActivities}
           className="refresh-button" 
         >
         </img>
@@ -50,7 +50,6 @@ const Find = () => {
           ) : activities.length > 0 ? (
             activities.slice().reverse().map((activity) => (
               <MatchCard
-                key={activity.id}
                 title={activity.title}
                 time={activity.time}
                 location={activity.location}

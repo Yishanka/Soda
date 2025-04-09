@@ -1,7 +1,6 @@
-import PageTitle from "../components/PageTitle.js";
 import { Link } from "react-router-dom";
+import PageTitle from "../components/PageTitle.js";
 
-// 定义已申请列表
 const Applied = () => {
     return (
       <div className="apply-page">

@@ -66,14 +66,19 @@
     cursor: pointer;
     transition: transform 0.2s;
 }
-.avatar:hover {
-    transform: scale(1.1);
-}
+
 .profile-link{
-    margin: 60px 25px 0 15px;
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    margin: 60px 25px 11px 10px;
     cursor: pointer;
     transition: transform 0.2s;
     color: #2E3025;
     text-decoration: none;
-    transition: background 0.3s, transform 0.2s;
+    transition: transform 0.2s;
+}
+
+.avatar:hover, .profile-link:hover {
+    transform: scale(1.1);
 }

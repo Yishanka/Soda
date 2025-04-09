@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 
 const TopBar = () => {
   const navigate = useNavigate();
+  const goTo = (e: React.FormEvent, page: string) => {
+    e.preventDefault();
+    navigate(page)
+  }
   return (
     <div className="top-bar">
       <div className="top-bar-content">
@@ -23,11 +27,11 @@ const TopBar = () => {
         <img
           src="/icons/avatar_origin.png" 
           className="avatar"
-          onClick={() => navigate("/profile-page")}
+          onClick={(e) => goTo(e, "/profile-page")}
         /> 
-        <Link to={"/profile-page"} className="profile-link"> 
+        <button type = "button" onClick={(e) => goTo(e, "/profile-page")} className="profile-link"> 
           个人主页
-        </Link>
+        </button>
       </div>
     </div>
   );

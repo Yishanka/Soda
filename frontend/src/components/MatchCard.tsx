@@ -1,26 +1,22 @@
-// 引入 ActivityInfo 类型定义
-import Activity from "../models/Activity.js";
+import { useState } from "react";
+import ActivityInfo from "../interface/ActivityInfo.js";
 
-// 定义 MatchCard 组件的属性接口
-interface MatchCardProps extends Activity {
-  // 可选的"联系TA"按钮点击回调函数
-  onContact?: () => void;
-}
-
-const MatchCard = ({ 
-  title, 
-  time, 
-  location, 
-  tags, 
-  creator_name,
-  onContact 
-}: MatchCardProps) => {
+const MatchCard = ({title, time, location, tags, creator_name}: ActivityInfo) => {
+  const Apply = async () => {
+  };
+  // const [isApply, setIsApply] = useState(false)
   return (
     <div className="card">
       {/* 卡片头部 - 包含标题和标签 */}
       <div className="card-header">
         <h3 className="card-title">{title}</h3>
-        <span className="card-tag">{tags}</span>
+        <div className="card-tags">
+          {tags.length>1 ? (
+            tags.slice().map((tag) => (<span className="card-tag">{tag}</span>))
+            ):(
+              <span className="card-tag">{tags}</span>
+          )}
+        </div>
       </div>
       
       {/* 活动详情 - 地点和时间 */}
@@ -36,7 +32,7 @@ const MatchCard = ({
         </span>
         <button 
           className="button" 
-          onClick={onContact}
+          onClick={Apply}
         >
           联系TA
         </button>

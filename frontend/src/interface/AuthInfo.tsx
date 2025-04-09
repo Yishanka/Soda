@@ -1,7 +1,7 @@
-interface Auth {
+interface AuthInfo {
     email: string;
     password: string;
     username?: string;
   }
   
-  export default Auth
+  export default AuthInfo
