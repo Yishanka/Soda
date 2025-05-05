@@ -2,10 +2,17 @@ import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const navigate = useNavigate()
+
+  // 动态导航重载，防止自动提交表单
+  const token = localStorage.getItem("token");
   const goTo = (e: React.FormEvent, page: string) => {
     e.preventDefault();
-    navigate(page);
+    if (!token) {
+      navigate("/login-page");
+    }
+    else navigate(page);
   };
+
   return (
     <nav className="navbar">
       <div className="nav-links">

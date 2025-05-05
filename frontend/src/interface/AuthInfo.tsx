@@ -4,4 +4,4 @@ interface AuthInfo {
     username?: string;
   }
   
-  export default AuthInfo
+export default AuthInfo

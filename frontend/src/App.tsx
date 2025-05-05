@@ -13,17 +13,17 @@ import PostActivity from "./pages/PostActivity.js";
 import Profile from "./pages/Profile.js";
 import "./App.css";
 
-const AuthWrapper = () => {
-  const navigate = useNavigate();
-  const token = localStorage.getItem("token");
-  useEffect(() => {
-    if (!token) {
-      navigate("/login-page",{replace: true});
-    }
-  }, []);
+// const AuthWrapper = () => {
+//   const navigate = useNavigate();
+//   const token = localStorage.getItem("token");
+//   useEffect(() => {
+//     if (!token) {
+//       navigate("/login-page", {replace: true});
+//     }
+//   }, []);
 
-  return token ? (<Outlet />) : <></>;  
-};
+//   return token ? (<Outlet />) : <></>;  
+// };
 
 const App = () => {
   return (
@@ -37,14 +37,14 @@ const App = () => {
           <Route path="/register-page" element={<Register />} />
 
           {/* 受保护页面：包裹在 AuthGuard 中 */}
-          <Route element={<AuthWrapper />}>
-            <Route path="/find-page" element={<Find />} />
-            <Route path="/my-activities-page" element={<MyActivities />} />
-            <Route path="/post-activity-page" element={<PostActivity />} />
-            <Route path="/apply-page" element={<Applied />} />
-            <Route path="/participate-page" element={<Participate />} />
-            <Route path="/profile-page" element={<Profile />} />
-          </Route>
+          {/* <Route element={<AuthWrapper />}> */}
+          <Route path="/find-page" element={<Find />} />
+          <Route path="/my-activities-page" element={<MyActivities />} />
+          <Route path="/post-activity-page" element={<PostActivity />} />
+          <Route path="/apply-page" element={<Applied />} />
+          <Route path="/participate-page" element={<Participate />} />
+          <Route path="/profile-page" element={<Profile />} />
+          {/* </Route> */}
         </Routes>
       </div>
       <NavBar />

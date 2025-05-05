@@ -26,8 +26,10 @@ def create_app():
     migrate.init_app(app, db)
     cors.init_app(app)
     jwt.init_app(app)
+    
     # 导入数据模型
-    from app import models
+    with app.app_context():
+        db.create_all()
 
     # 注册蓝图
     from app.routes import register_routes

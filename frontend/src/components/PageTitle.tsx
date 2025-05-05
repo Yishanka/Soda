@@ -3,7 +3,7 @@ type PageTitleProps = {
     pageSubTitle: string;
 };
 
-const PageTitle = ({pageTitle, pageSubTitle}:PageTitleProps)=>{
+const PageTitle = ({pageTitle, pageSubTitle}: PageTitleProps)=>{
     return(
         <div className="page-title-container">
             <h1 className="page-title">{pageTitle}</h1>

@@ -1,6 +1,4 @@
 import datetime
-import jwt
-import os
 from flask import Blueprint, request, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from app import db
@@ -12,6 +10,9 @@ auth_bp = Blueprint('auth_bp', __name__)
 
 @auth_bp.route('/register', methods=['POST'])
 def register():
+    '''
+    用户注册
+    '''
     # 获取注册信息，并验证信息是否完整
     register_info = request.get_json()
     if not register_info or not register_info.get('username') or not register_info.get('email') or not register_info.get('password'):
@@ -39,6 +40,9 @@ def register():
 
 @auth_bp.route('/login', methods=['POST'])
 def login():
+    '''
+    用户登录
+    '''
     # 获取登录信息，并验证信息是否完整
     login_info = request.get_json()
     if not login_info or not login_info.get('email') or not login_info.get('password'):

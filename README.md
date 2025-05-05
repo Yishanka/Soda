@@ -1,7 +1,7 @@
 # Soda-速搭
 
 ## 项目简介
-Soda-速搭是一个跨平台的搭子匹配应用，支持 **Windows / macOS / Linux**，结合 **Electron + React + Supabase** 实现 **智能匹配、聊天、活动管理** 等功能。
+Soda-速搭是一个搭子匹配应用，结合 **Electron + React + Supabase** 实现 **智能匹配、聊天、活动管理** 等功能。
 
 ## 🌟 功能亮点
 ✅ **智能匹配**：基于兴趣、时间、课程等自动推荐最佳搭子  
@@ -19,7 +19,7 @@ Soda-速搭是一个跨平台的搭子匹配应用，支持 **Windows / macOS / 
 2. 执行以下脚本
    ```bash
    cd backend
-   pip install -r requirements.txt
+   pip install flask
    cd ../frontend
    npm install
    tsc

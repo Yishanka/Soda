@@ -6,14 +6,6 @@
 
 ## 1️⃣ **安装开发环境**
 
-### 1.1 **安装 Git**（用于代码管理）
-
-- 下载安装：[Git 官网](https://git-scm.com/downloads)
-- 检查是否安装成功：
-  ```bash
-  git --version
-  ```
-
 ### 1.2 **安装 Node.js 18+**（运行前端 & Electron）
 
 - 下载安装：[Node.js 官网](https://nodejs.org/)
@@ -21,29 +13,6 @@
   ```bash
   node -v
   npm -v
-  ```
-
-### 1.3 **安装 VS Code**（推荐的开发工具）
-
-- 下载安装：[VS Code 官网]\([https://code.visualstudio.com/）](https://code.visualstudio.com/）)
-
-### 1.4 **安装 Python 3.10+**（Supabase CLI 依赖）
-
-- 下载安装：[Python 官网](https://www.python.org/downloads/)
-- 检查是否安装成功：
-  ```bash
-  python --version
-  ```
-
-### 1.5 **安装 Supabase CLI**（数据库管理工具）
-
-- 运行命令安装：
-  ```bash
-  npm install -g supabase
-  ```
-- 检查是否安装成功：
-  ```bash
-  supabase --version
   ```
 
 ---
@@ -61,7 +30,7 @@
    postgresql://postgres:[YOUR_PASSWORD]@db.[YOUR_PROJECT_ID].supabase.co:5432/postgres
    ```
 
-### 2.2 **配置环境变量**（❗不要将数据库密码上传到 GitHub）
+### 2.2 **配置环境变量**
 
 1. 在 `backend/.env` 文件中添加数据库连接信息：
 
@@ -71,14 +40,6 @@ DATABASE_URL=postgresql://postgres:[YOUR_PASSWORD]@db.[YOUR_PROJECT_ID].supabase
 
 2. **在 GitHub 上共享数据库信息的方法**（避免直接暴露密码）：
    - **方法 1**：让团队成员手动创建 `.env` 文件，并私下分享 `DATABASE_URL`。
-
-### 2.3 **初始化数据库**
-
-运行以下命令，将 `schema.sql` 结构导入 Supabase 数据库：
-
-```bash
-psql -h db.[YOUR_PROJECT_ID].supabase.co -p 5432 -U postgres -d postgres -f db/schema.sql
-```
 
 ---
 
@@ -95,12 +56,6 @@ npm install
 
 ```bash
 npm run dev
-```
-
-### 3.3 **运行桌面端（Electron）**
-
-```bash
-npm run electron
 ```
 
 ---
@@ -126,13 +81,42 @@ git push -u origin main
 ### 4.3 **创建 ****`.gitignore`****（忽略不必要的文件）**
 
 在 `SodaSpeedMatch/.gitignore` 添加：
+supabase_config.json
 
-```
+__pycache__/
+*.exe
+*.app
+*.asar
+
+.idea/
+
+.DS_Store
+Thumbs.db
+
 node_modules/
+
 dist/
+dist-electron/
+
 .env
-supabase/
-```
+.env.local
+.env.development
+.env.production
+
+.vite/
+.cache/
+out/
+build/
+tsconfig.tsbuildinfo
+
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.vscode/
 
 ---
 
@@ -148,13 +132,12 @@ npm install
 ```
 
 ### ❓ Supabase 连接失败？
+supabase的连接需要检查网络环境，家中由于是IPv4网络，因此无法通过direct connection。
+后续如果部署到服务器，需要用IPv6，并直接使用direct connection的uri，需要修改！！！！
+tsc 编译前端
 
-✅ 解决方案：
-
-```bash
-确保 `DATABASE_URL` 正确，并检查网络是否可访问 Supabase。
-```
-
+cd backend
+pip install flask
 ---
 
 ✅ **现在，你的环境已准备就绪！开始开发吧 🚀！**

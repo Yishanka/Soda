@@ -1,12 +1,18 @@
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const TopBar = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate();  
+  
+  // 动态导航重载，防止自动提交表单
+  const token = localStorage.getItem("token");
   const goTo = (e: React.FormEvent, page: string) => {
     e.preventDefault();
-    navigate(page)
-  }
+    if (!token) {
+      navigate("/login-page", {replace: true});
+    }
+    else navigate(page);
+  };
+
   return (
     <div className="top-bar">
       <div className="top-bar-content">

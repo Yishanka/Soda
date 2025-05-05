@@ -10,7 +10,7 @@ app.whenReady().then(() => {
     },
   });
 
-  mainWindow.loadURL('http://localhost:5173');
+  mainWindow.loadURL('http://localhost:5173');// 挂载的网页地址，后续可改
   mainWindow.maximize();
   
   mainWindow.on('closed', () => {
