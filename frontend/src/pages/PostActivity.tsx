@@ -26,13 +26,6 @@ const PostActivity = () => {
   const submitActivity = async (e: React.FormEvent) => {
     setIsLoading(true)
     e.preventDefault(); 
-    // const token = localStorage.getItem("token");
-    // const headers: Record<string, string> = {
-    //   "Content-Type": "application/json"
-    // };
-    // if (token) {
-    //   headers["Authorization"] = `${token}`;
-    // }
     try {
       await post("activity", "add_activity",activityInfo,e)
       localStorage.removeItem(STORAGE_KEY);

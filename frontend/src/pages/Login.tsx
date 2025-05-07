@@ -11,6 +11,7 @@ const Login = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState<AuthInfo>({ email: "", password: "" });
     
+    // 提交表单
     const submitLogin = async (e: React.FormEvent) => {
         setIsLoading(true)
         e.preventDefault();

@@ -5,6 +5,7 @@ const Home = () => {
   const navigate = useNavigate();
   const [isFinished, setIsFinished] = useState(false);
 
+  // 播放动画的计时器
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsFinished(true);
@@ -13,13 +14,14 @@ const Home = () => {
     return () => clearTimeout(timer); // 组件卸载时清除定时器
   }, [navigate]);
 
+  // 页面跳转判定
   useEffect(() => {
     if (isFinished) {
         const token = localStorage.getItem("token");
         if (!token) {
-            navigate("/login-page"); // 若未登录进入登录页面
+            navigate("/login-page");
         }
-        else navigate("/find-page") // 若登录进入发现页面
+        else navigate("/find-page")
     }
 }, [isFinished, navigate]);
 

@@ -10,6 +10,7 @@ const Find = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // 获取所有活动
   const getActivities = async () => {
     setIsLoading(true);
     try {

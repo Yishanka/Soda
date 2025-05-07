@@ -11,18 +11,11 @@ const MyActivities = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  // 获取所有已创建的活动
   const getCreatedActivities = async () => {
     setIsLoading(true);
-    const token = localStorage.getItem("token");
-    const headers: Record<string, string> = {
-      "Content-Type": "application/json"
-    };
-    if (token) {
-      headers["Authorization"] = `${token}`;
-    }
-    
     try {
-      const data: [] = await get("activity", "get_creator_activities")
+      const data: [] = await get("activity", "get_creator_activities");
       setCreatedActivities(data);
     } catch (err: any) {
       setError(err.message);
