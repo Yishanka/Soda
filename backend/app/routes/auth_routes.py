@@ -10,9 +10,7 @@ auth_bp = Blueprint('auth_bp', __name__)
 
 @auth_bp.route('/register', methods=['POST'])
 def register():
-    '''
-    用户注册
-    '''
+    '''用户注册'''
     # 获取注册信息，并验证信息是否完整
     register_info = request.get_json()
     if not register_info or not register_info.get('username') or not register_info.get('email') or not register_info.get('password'):

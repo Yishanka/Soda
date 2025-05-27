@@ -9,9 +9,7 @@ from app.service import verify_token
 activity_bp = Blueprint('activity_bp', __name__)
 
 def _check_activity_info():
-    '''
-    获取活动信息，并验证信息是否完整
-    '''
+    '''获取活动信息，并验证信息是否完整'''
     activity_info = request.get_json()
     if not activity_info or not activity_info.get('title') or not activity_info.get('time') or not activity_info.get('location') or not activity_info.get('tags') or not activity_info.get('description'):
         return None
@@ -70,13 +68,11 @@ def add_activity():
     
     except Exception as e:
         db.session.rollback()  # 出现异常时，回滚事务
-        return jsonify({'error': str(e)}), 500
+        return jsonify({'error': f'添加失败{str(e)}'}), 500
 
 @activity_bp.route('/get_all_activities', methods=['GET'])
 def get_all_activities():
-    '''
-    获取所有活动，成功则返回活动列表
-    '''
+    '''获取所有活动，成功则返回活动列表'''
     # 验证登录情况并获取解码后的登录信息
     decoded_token = verify_token()
 
@@ -89,15 +85,12 @@ def get_all_activities():
         activities = db.session.query(Activity).order_by(Activity.created_at.asc()).all()
         activities_list = [activity.get_activity_info() for activity in activities]
         return jsonify(activities_list), 200
-    
     except Exception as e:
         return jsonify({'error': f'活动获取失败{str(e)}'}), 500
     
 @activity_bp.route('/get_creator_activities', methods=['GET'])
 def get_creator_activities():
-    '''
-    获取创建者的所有活动，成功则返回活动列表
-    '''
+    '''获取创建者的所有活动，成功则返回活动列表'''
     # 验证登录情况并获取解码后的登录信息
     decoded_token = verify_token()
 
@@ -113,5 +106,32 @@ def get_creator_activities():
         activities_list = [activity.get_activity_info() for activity in activities]
         return jsonify(activities_list), 200
 
+    except Exception as e:
+        return jsonify({'error': f'活动获取失败{str(e)}'}), 500
+    
+@activity_bp.route('/get_activity_by_id/<int:activity_id>', methods=['GET'])
+def get_activity_by_id(activity_id):
+    '''
+    获取某个活动，成功则返回活动列表
+    Parameters:
+        activity_id: 活动 id
+    '''
+    # 验证登录情况
+    decoded_token = verify_token()
+    if isinstance(decoded_token, tuple):  # 验证失败
+        return decoded_token
+    
+    try:
+        # 查询指定活动
+        activity = Activity.query.get(activity_id)
+        
+        if not activity:
+            return jsonify({'error': '活动不存在'}), 404
+            
+        # 获取活动信息并包含创建时间
+        activity_info = activity.get_activity_info()
+        activity_info['created_at'] = activity.created_at.isoformat()
+        
+        return jsonify(activity_info), 200
     except Exception as e:
         return jsonify({'error': f'活动获取失败{str(e)}'}), 500
